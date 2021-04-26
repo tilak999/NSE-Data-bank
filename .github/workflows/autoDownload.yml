@@ -6,11 +6,16 @@ name: GetBhavCopy
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+        date:
+          description: 'Date for which bhav copy to be downloaded'
+          required: false
+          default: ''
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  download:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -22,7 +27,7 @@ jobs:
       with:
         node-version: 15.x
     - run: npm install
-    - run: npm run download
+    - run: node index.js "${{ github.event.inputs.date }}"
     - uses: EndBug/add-and-commit@v7.0.0
       with:
         add: './data'
