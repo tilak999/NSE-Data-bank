@@ -1,0 +1,13 @@
+{
+  "name": "NSE-Data-bank",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "download": "node index.js"
+  },
+  "author": "Tilak",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
