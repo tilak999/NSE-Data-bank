@@ -4,7 +4,7 @@ const path = require("path")
 
 const date = process.argv[2] ? new Date(process.argv[2]) : new Date()
 const month = date.getMonth() + 1
-const dateString = date.getDate() + (month < 10 ? ('0' + month) : month) + date.getFullYear() + ''
+const dateString = (date.getDate() < 10 ? '0' + date.getDate(): date.getDate()) + (month < 10 ? ('0' + month) : month) + date.getFullYear() + ''
 const url = `https://archives.nseindia.com/products/content/sec_bhavdata_full_${dateString}.csv`
 
 function getFileName(url) {
