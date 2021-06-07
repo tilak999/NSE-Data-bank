@@ -8,6 +8,8 @@
   "author": "Tilak",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "moment": "^2.29.1",
+    "sqlite3": "^5.0.2"
   }
 }

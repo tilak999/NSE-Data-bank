@@ -1,15 +1,14 @@
 const axios = require("axios")
 const fs = require("fs")
 const path = require("path")
+const moment = require('moment')
 
-const date = process.argv[2] ? new Date(process.argv[2]) : new Date()
-const month = date.getMonth() + 1
-const dateString = (date.getDate() < 10 ? '0' + date.getDate(): date.getDate()) + (month < 10 ? ('0' + month) : month) + date.getFullYear() + ''
+const date = process.argv[2] ? moment(new Date(process.argv[2])) : moment()
+const dateString = date.format("DDMMyyyy")
 const url = `https://archives.nseindia.com/products/content/sec_bhavdata_full_${dateString}.csv`
 
 function getFileName(url) {
-    const chunks = url.split("/")
-    return chunks[chunks.length - 1]
+    return url.split("/").pop()
 }
 
 function download() {
@@ -29,4 +28,5 @@ function download() {
     })
 }
 
-if(date.getDay() >= 1 && date.getDay() <=5) download()
+const day = date.format('dddd')
+if(day != 'Saturday' && day != 'Sunday') download()
