@@ -27,7 +27,7 @@ jobs:
     - name: Use Node.js 15.x
       uses: actions/setup-node@v2
       with:
-        node-version: 15.x
+        node-version: 16.x
     - run: npm install
     - run: node index.js "${{ github.event.inputs.date }}"
     - uses: EndBug/add-and-commit@v7.0.0
