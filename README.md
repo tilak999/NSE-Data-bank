@@ -1,3 +1,5 @@
+[![GetBhavCopy](https://github.com/tilak999/NSE-Data-bank/actions/workflows/autoDownload.yml/badge.svg?branch=main)](https://github.com/tilak999/NSE-Data-bank/actions/workflows/autoDownload.yml)
+
 # NSE-Data-bank
 This respository gets updated on daily basis with the latest bhavcopy added to data directory.
 We have daily stock data for more than 2 decades now. 🎉 
